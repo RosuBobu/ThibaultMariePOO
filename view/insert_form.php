@@ -6,7 +6,7 @@
         <div class="container">
             <h1>Add a Raviole Recipe !</h1>
             <a href="../ThibaultMariePOO/index.php?controller=default&action=home">
-                <button style="margin-bottom:10px;" class="btn btn-success">back to dashboard</button>
+                <button style="margin-bottom:10px;" class="btn btn-primary">back to dashboard</button>
             </a>
 
             <form method="POST" action="index.php?controller=raviole&action=addRaviole"> 

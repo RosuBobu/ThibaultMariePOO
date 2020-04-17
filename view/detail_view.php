@@ -5,12 +5,10 @@
     <body>
         <div class="container">
 
-            <h1>&diams;&diams;&diams;Welcome to the RavioleKingdom™ ! &diams;&diams;&diams;</h1>
-
-            <a href="../ThibaultMariePOO/index.php?controller=raviole&action=addForm">
-                <button style="margin-bottom: 10px;" class="btn btn-primary">Add a raviole recipe !</button>
+            <h1>&diams;The Recipe : <?php echo $raviole->getTitle();?> &diams; </h1>
+            <a href="../ThibaultMariePOO/index.php?controller=default&action=home">
+                <button style="margin-bottom:10px;" class="btn btn-primary">back to dashboard</button>
             </a>
-
             <table class="table">
                 <thead>
                     <tr>
@@ -21,26 +19,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php 
-                   
-                        foreach($ravioles as $raviole){
-                        
-                    ?>
                         <tr>
                             <td><?php echo($raviole->getId());?></td>
                             <td>&#147;<?php echo($raviole->getTitle());?>&#148;</td>
                             <td><?php echo($raviole->getMainIngredient());?></td>
                             <td>
-                                <a href="../ThibaultMariePOO/index.php?controller=raviole&action=delete&id=<?php echo($raviole->getId())?>">DELETE</a> ¦ 
-                                <a href="../ThibaultMariePOO/index.php?controller=raviole&action=updateForm&id=<?php echo($raviole->getId())?>">EDIT</a> ¦ 
-                                <a href="../ThibaultMariePOO/index.php?controller=raviole&action=detail&id=<?php echo($raviole->getId())?>">DETAIL</a>
+                                <a href="../ThibaultMariePOO/index.php?controller=raviole&action=delete&id=<?php echo($raviole->getId())?>">delete</a>
+                                <a href="../ThibaultMariePOO/index.php?controller=raviole&action=updateForm&id=<?php echo($raviole->getId())?>">edit</a>
                             </td>
                         </tr>   
-                    <?php
-                        }
-                    ?>
                 </tbody>
             </table>
+            <div class="container">
+                <h3><?php echo($raviole->getMainIngredient());?></h3>
+                <p><?php echo($raviole->getRecipe());?></p>
+            </div>
+            <div class="container">
+                <img src="">
+            </div>
+
         </div>
         <?php
             include 'parts/scripts.html';

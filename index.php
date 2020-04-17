@@ -1,6 +1,6 @@
 <?php
-var_dump($_POST);
-var_dump($_GET);
+// var_dump($_POST);
+// var_dump($_GET);
 
     require 'include.php';
 
@@ -29,6 +29,12 @@ var_dump($_GET);
         $ravioleController = new RavioleController();
         $ravioleController->updateRaviole($_GET['id']);
     }
+
+    else if($_GET['controller'] === 'raviole' && $_GET['action'] === 'detail' && isset($_GET['id'])){
+        $ravioleController = new RavioleController();
+        $ravioleController->detail($_GET['id']);
+    }
+
     else{
         throw new Exception('404 your raviole was not found :(', 404);
     }

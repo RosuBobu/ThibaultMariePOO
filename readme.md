@@ -70,9 +70,10 @@ __6) Expliquez ce qu’est une exception. Décrire les éléments qui la compose
 
 __7) Dans un modèle MVC quel est le rôle du router. Quelle est la variable super globale qu’il utilise pour accomplir son rôle ? (1 point)__
 
-    le routeur, souvent le fichier index.php, sert à rediriger l'utilisateur, 
+    le routeur, souvent le fichier index.php, sert à faire naviguer l'utilisateur, 
     et lui présenter les composants qui font suite à son interraction avec le site
     (remplir un formulaire, soumettre un forumulaire...)
+    il sert à appeller les fonctions nécessaires.
     il utilise la superglobale $_GET, qui permet de récupérer des infos via l'url
     par exemple : 
         index.php?controller=default&action=home

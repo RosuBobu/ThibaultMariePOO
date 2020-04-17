@@ -1,5 +1,4 @@
-1) Ecrire une interface qui obligera une classe à implémenter la fonction login prenant en
-paramètre un user et un password (0.5 point)
+__1) Ecrire une interface qui obligera une classe à implémenter la fonction login prenant en paramètre un user et un password (0.5 point)__
 ```php
             <?php
                 interface InterfaceName{
@@ -7,8 +6,7 @@ paramètre un user et un password (0.5 point)
                 }
             ?> 
 ```
-2) Citez 6 méthodes magiques. Expliquez à quelle moment elles sont déclenchées et les
-paramètres qu’elles prennent. (1.5 points)
+__2) Citez 6 méthodes magiques. Expliquez à quelle moment elles sont déclenchées et les paramètres qu’elles prennent. (1.5 points)__
 ```php
             <?php
             function __construct(); //appelé lors d'un new ObjectName, initialise l'objet
@@ -19,15 +17,13 @@ paramètres qu’elles prennent. (1.5 points)
             function __unset($name); //renvoie un boolean, appelé après unset($name) qui détruit une propriété $name à laquelle on n'a pas accès (droits insuffisants, ou inexistance de l'attribut)
             ?>
 ```
-3) Je suis une méthode magique appelé implicitement à la fin d’un script. Qui suis-je ? (1
-point)
+__3) Je suis une méthode magique appelé implicitement à la fin d’un script. Qui suis-je ? (1 point)__
 ```php
     <?php
         function __destruct();    
     ?>
 ```
-4) Je suis une classe qui pourra être hérité mais qui ne pourra pas être instancier (impossible
-de faire new ...). Qui suis-je et comment faire pour me créer ? (1 point)
+__4) Je suis une classe qui pourra être hérité mais qui ne pourra pas être instancier (impossible de faire new ...). Qui suis-je et comment faire pour me créer ? (1 point)__
 
     une classe abstraite, par exemple un parent d'une classe.
 ```php
@@ -39,13 +35,13 @@ de faire new ...). Qui suis-je et comment faire pour me créer ? (1 point)
         }   
     ?>
 ```
-5) Donnez 3 types de visibilité sur un attribut expliquez la différence. (1.5 points)
+__5) Donnez 3 types de visibilité sur un attribut expliquez la différence. (1.5 points)__
 
     public -> l'attribut est utilisable en dehors de sa classe.
     protected -> l'attribut est utilisable exclusivement par les enfant.
     private -> l'attribut est inutilisable en dehors de sa classe.
 
-6) Expliquez ce qu’est une exception. Décrire les éléments qui la compose (1 point)
+__6) Expliquez ce qu’est une exception. Décrire les éléments qui la compose (1 point)__
 
     une exception est un objet Exception qui sert à générer des messages d'arreurs.
     on peut s'en servir avec un :
@@ -62,8 +58,7 @@ de faire new ...). Qui suis-je et comment faire pour me créer ? (1 point)
         }
 ```
 
-7) Dans un modèle MVC quel est le rôle du router. Quelle est la variable super globale qu’il
-utilise pour accomplir son rôle ? (1 point)
+__7) Dans un modèle MVC quel est le rôle du router. Quelle est la variable super globale qu’il utilise pour accomplir son rôle ? (1 point)__
 
     le routeur, souvent le fichier index.php sert à redirigé l'utilisateur, 
     et lui présenter les composants qui font suite à son interraction avec le site
@@ -72,12 +67,12 @@ utilise pour accomplir son rôle ? (1 point)
     par exemple : 
         index.php?controller=default&action=home
 
-8) Expliquez les avantages de l’utilisation d’un pattern MVC. (1.5 points)
+__8) Expliquez les avantages de l’utilisation d’un pattern MVC. (1.5 points)__
 
     un patern MVC structure un projet avec des fichiers séparés, conçis et bien rangé
     il permet une meilleure maintenance, un meilleur travail à plusieurs dev, et des modifications facilités,
     il est un standard du web et le comprendre et le partager est donc plus simple,
 
-9) Détaillez les éléments qui composent un pattern MVC (1 point)
+__9) Détaillez les éléments qui composent un pattern MVC (1 point)__
 
     il sépare les fichiers SQL base de données (MODEL) des front utilisateur html, css, js (VIEW) et du traitement fait en php (CONTROLLER)

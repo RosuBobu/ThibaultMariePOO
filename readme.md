@@ -1,15 +1,15 @@
 1) Ecrire une interface qui obligera une classe à implémenter la fonction login prenant en
 paramètre un user et un password (0.5 point)
-
+```php
             <?php
                 interface InterfaceName{
                     public function login($user, $password);
                 }
             ?> 
-
+```
 2) Citez 6 méthodes magiques. Expliquez à quelle moment elles sont déclenchées et les
 paramètres qu’elles prennent. (1.5 points)
-
+```php
             <?php
             function __construct(); //appelé lors d'un new ObjectName, initialise l'objet
             function __destruct(); //appelé à la fin du script ou explicitement par le dev, détruit l'objet
@@ -18,19 +18,19 @@ paramètres qu’elles prennent. (1.5 points)
             function __isset($name); //renvoie un boolean, appelé après isset($name) qui vérifie l'existence d'une propriété $name à laquelle on n'a pas accès (droits insuffisants, ou inexistance de l'attribut)
             function __unset($name); //renvoie un boolean, appelé après unset($name) qui détruit une propriété $name à laquelle on n'a pas accès (droits insuffisants, ou inexistance de l'attribut)
             ?>
-
+```
 3) Je suis une méthode magique appelé implicitement à la fin d’un script. Qui suis-je ? (1
 point)
-
+```php
     <?php
         function __destruct();    
     ?>
-
+```
 4) Je suis une classe qui pourra être hérité mais qui ne pourra pas être instancier (impossible
 de faire new ...). Qui suis-je et comment faire pour me créer ? (1 point)
 
-    une classe abstraire, par exemple un parent d'une classe.
-
+    une classe abstraite, par exemple un parent d'une classe.
+```php
     <?php
         class Child extends Parent{
             public function __construct(){
@@ -38,7 +38,7 @@ de faire new ...). Qui suis-je et comment faire pour me créer ? (1 point)
             }
         }   
     ?>
-
+```
 5) Donnez 3 types de visibilité sur un attribut expliquez la différence. (1.5 points)
 
     public -> l'attribut est utilisable en dehors de sa classe.
@@ -48,15 +48,19 @@ de faire new ...). Qui suis-je et comment faire pour me créer ? (1 point)
 6) Expliquez ce qu’est une exception. Décrire les éléments qui la compose (1 point)
 
     une exception est un objet Exception qui sert à générer des messages d'arreurs.
-    on peut s'en servir avec un 
-        throw new Exception('message d'erreur personnalisé');
-    ou à l'aide d'une methode try/catch
+    on peut s'en servir avec un :
+```php
+        throw new Exception('message d\'erreur personnalisé');
+```        
+    ou à l'aide d'une methode try/catch : 
+```php    
         try{
             //l'action à effectuer
         } catch (Exception $maVariableException){
             //action avec ma variable comme par exemple
             var_dump($maVariableException);
         }
+```
 
 7) Dans un modèle MVC quel est le rôle du router. Quelle est la variable super globale qu’il
 utilise pour accomplir son rôle ? (1 point)

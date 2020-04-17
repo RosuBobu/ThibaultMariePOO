@@ -13,15 +13,15 @@
         <button style="margin-bottom:10px;" class="btn btn-success">back to dashboard</button>
     </a>
 
-    <form method="post" action="index.php?controller=raviole&action=updateRaviole&id=<?php echo $raviole->getId()?>">
+    <form method="post" action="index.php?controller=raviole&action=updateRaviole&id=<?php echo $raviole->getId()?>" enctype="multipart/form-data">
         <label>Title</label>
         <input type="text" name="title" class="form-control" value="<?php echo $raviole->getTitle()?>">
         <label>Main ingredient of recipe</label>
         <input type="text" name="main_ingredient" class="form-control" value="<?php echo $raviole->getMainIngredient()?>">
         <label>How it's done : </label>
-        <textarea name="recipe" class="form-control" value="<?php echo $raviole->getRecipe()?>"></textarea>
+        <textarea name="recipe" class="form-control"><?php echo $raviole->getRecipe()?></textarea>
         <label>New image of recipe</label>
-        <input type="file">
+        <input type="file" class="form-control" name="url" accept="image/png, image/jpeg"><br>
         <input class="btn btn-primary" type="submit" value="SEND RECIPE !">
     </form>
 </div>

@@ -30,12 +30,15 @@
                         </tr>   
                 </tbody>
             </table>
-            <div class="container">
-                <h3><?php echo($raviole->getMainIngredient());?></h3>
+            <div class="container text-center">
+                <h3><?php echo($raviole->getTitle());?></h3>
+                <u>how it's made :</u>
                 <p><?php echo($raviole->getRecipe());?></p>
-            </div>
-            <div class="container">
-                <img src="">
+                <hr>
+               <img src="..\ThibaultMariePOO\view\assets\uploads\<?php echo($raviole->getUrl())?>" height="200px" alt="No Image Found">
+           
+          
+          
             </div>
 
         </div>

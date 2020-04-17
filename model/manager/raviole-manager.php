@@ -20,9 +20,9 @@
             $main_ingredient = $raviole->getMainIngredient();
             $recipe = $raviole->getRecipe();
             $url = $raviole->getUrl();
-            $req = $this->db->prepare('INSERT INTO ravioles(main_ingredient, title, recipe, url) VALUES (?,?,?,?)');
-            $req->bindParam(1, $main_ingredient);
-            $req->bindParam(2, $title);
+            $req = $this->db->prepare('INSERT INTO ravioles(title,main_ingredient, recipe, url) VALUES (?,?,?,?)');
+            $req->bindParam(1, $title);
+            $req->bindParam(2, $main_ingredient);
             $req->bindParam(3, $recipe);
             $req->bindParam(4, $url);
             $req->execute();
@@ -36,15 +36,11 @@
         }
 
         public function select($id){
-            // echo('<br>the id gets there : select() in  raviole-manager.php');
-            // var_dump($id);
             $req = $this->db->prepare('SELECT * FROM ravioles WHERE id=?');
             $req->bindParam(1, $id);
             $req->execute();
             $res = $req->fetch();
-            $raviole = new Raviole($res['id'], $res['main_ingredient'], $res['title'], $res['recipe'], $res['url']);
-            // echo('<br> raviole_manager.php >> select($id) >> return $raviole :var_dump($raviole) : <br>');
-            // var_dump($raviole);
+            $raviole = new Raviole($res['id'],$res['title'],$res['main_ingredient'],$res['recipe'],$res['url']);
             return $raviole;
         }
 
@@ -54,17 +50,12 @@
             $main_ingredient = $raviole->getMainIngredient();
             $recipe = $raviole->getRecipe();
             $url = $raviole->getUrl();
-            $req = $this->db->prepare('UPDATE ravioles SET main_ingredient=?, title=?, recipe=?, url=? WHERE id=?');
-            $req->bindParam(1, $main_ingredient);
-            $req->bindParam(2, $title);
+            $req = $this->db->prepare('UPDATE ravioles SET title=?,main_ingredient=?,recipe=?,url=? WHERE id=?');
+            $req->bindParam(1, $title);
+            $req->bindParam(2, $main_ingredient);            
             $req->bindParam(3, $recipe);
             $req->bindParam(4, $url);
             $req->bindParam(5, $id);
-            // if (isset($url)){
-            //     $req->bindParam(4, $url);
-            // } else {
-            //     $req->bindParam(4, null);
-            // }
             $req->execute();
         }
     }

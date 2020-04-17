@@ -6,11 +6,12 @@
         private $recipe;
         private $url;
 
-        public function __construct($id = null, $title, $main_ingredient, $recipe){
+        public function __construct($id = null, $title, $main_ingredient, $recipe, $url){
             $this->id = $id;
             $this->title = $title;
             $this->main_ingredient = $main_ingredient;
             $this->recipe = $recipe;
+            $this->url = $url;
         }
 
         public function getId(){

@@ -1,6 +1,7 @@
 <?php
-// var_dump($_POST);
-// var_dump($_GET);
+var_dump($_POST);
+var_dump($_GET);
+var_dump($_FILES);
 
     require 'include.php';
 
@@ -25,7 +26,7 @@
         $ravioleController->updateForm($_GET['id']);
     }
     else if($_GET['controller'] === 'raviole' && $_GET['action'] === 'updateRaviole' && isset($_GET['id'])){
-        echo('je passe bien dans le routeur');
+        echo('je passe bien dans le routeur update raviole');
         $ravioleController = new RavioleController();
         $ravioleController->updateRaviole($_GET['id']);
     }

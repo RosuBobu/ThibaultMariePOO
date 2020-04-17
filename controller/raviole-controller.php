@@ -6,7 +6,13 @@ class RavioleController{
     }
 
     public function persistForm(){
-        $raviole = new Raviole(null,$_POST['main_ingredient'], $_POST['title'], $_POST['recipe'], null);
+        if(isset($_FILES)){
+            $url =uniqid().'.'.explode('/',$_FILES['url']['type'])[1];
+            move_uploaded_file($_FILES['url']['tmp_name'],'view/assets/uploads/'.$url);
+        } else {
+            $url = null;
+        }
+        $raviole = new Raviole(null,$_POST['title'],$_POST['main_ingredient'],$_POST['recipe'], $url);
         $ravioleManager = new RavioleManager();
         $ravioleManager->insert($raviole);
         header('Location: /ThibaultMariePOO/index.php?controller=default&action=home');
@@ -27,10 +33,37 @@ class RavioleController{
     public function updateRaviole($id){
         $ravioleManager = new RavioleManager();
         $raviole = $ravioleManager->select($id);
-        $raviole = new Raviole($id, $_POST['main_ingredient'], $_POST['title'], $_POST['recipe']);
+
+        
+        if(isset($_FILES)){
+            $url =uniqid().'.'.explode('/',$_FILES['url']['type'])[1];
+            move_uploaded_file($_FILES['url']['tmp_name'],'view/assets/uploads/'.$url);
+        } else {
+            $url = $raviole->getUrl();
+        }
+
+        
+        $raviole = new Raviole($id, $_POST['main_ingredient'], $_POST['title'], $_POST['recipe'], $url);//url
+       
         $ravioleManager->update($raviole);
         header('Location: /ThibaultMariePOO/index.php?controller=default&action=home');
     }
+
+    // public function persistForm(){
+    //     if(isset($_FILES)){
+    //         $url =uniqid().'.'.explode('/',$_FILES['url']['type'])[1];
+    //         move_uploaded_file($_FILES['url']['tmp_name'],'view/assets/uploads/'.$url);
+    //     } else {
+    //         $url = null;
+    //     }
+    //     $raviole = new Raviole(null,$_POST['title'],$_POST['main_ingredient'],$_POST['recipe'], $url);
+    //     $ravioleManager = new RavioleManager();
+    //     $ravioleManager->insert($raviole);
+    //     header('Location: /ThibaultMariePOO/index.php?controller=default&action=home');
+    // }
+
+
+
 
     public function detail($id){
         $ravioleManager = new RavioleManager();

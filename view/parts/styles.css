@@ -1,0 +1,13 @@
+body{
+    background: linear-gradient(to bottom right, green, yellowgreen);
+}
+
+h1{
+    color: wheat;
+    -webkit-text-stroke: darkgreen 1px;
+    font-weight: bold;
+}
+table tr{
+    color: white;
+    text-shadow: 1px 0px 0px black;
+}

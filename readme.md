@@ -87,3 +87,11 @@ __8) Expliquez les avantages de l’utilisation d’un pattern MVC. (1.5 points)
 __9) Détaillez les éléments qui composent un pattern MVC (1 point)__
 
     il sépare les fichiers SQL base de données (MODEL) des fichiers front utilisateur avec du html, css, js (VIEW) et du traitement fait en php (CONTROLLER)
+
+
+
+
+-----------
+# j'ai joint un screenshot de ma db dans view/assets/raviolesSQL.png
+# merci, et bonne correction :)
+-----------

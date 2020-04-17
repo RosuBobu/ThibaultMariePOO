@@ -4,7 +4,12 @@ __1) Ecrire une interface qui obligera une classe à implémenter la fonction lo
                 interface InterfaceName{
                     public function login($user, $password);
                 }
-            ?> 
+            // on n'oubliera pas l'implementation dans la classe
+                class ClassName implements IntefaceName{
+
+                }
+            ?>
+        
 ```
 __2) Citez 6 méthodes magiques. Expliquez à quelle moment elles sont déclenchées et les paramètres qu’elles prennent. (1.5 points)__
 ```php
@@ -33,7 +38,12 @@ __4) Je suis une classe qui pourra être hérité mais qui ne pourra pas être i
                 parent::__construct();
             }
         }   
+    // on crée une class abstraite avec la syntaxe abstract
+        abstract class Parent{
+
+        }
     ?>
+
 ```
 __5) Donnez 3 types de visibilité sur un attribut expliquez la différence. (1.5 points)__
 
@@ -60,7 +70,7 @@ __6) Expliquez ce qu’est une exception. Décrire les éléments qui la compose
 
 __7) Dans un modèle MVC quel est le rôle du router. Quelle est la variable super globale qu’il utilise pour accomplir son rôle ? (1 point)__
 
-    le routeur, souvent le fichier index.php sert à redirigé l'utilisateur, 
+    le routeur, souvent le fichier index.php, sert à rediriger l'utilisateur, 
     et lui présenter les composants qui font suite à son interraction avec le site
     (remplir un formulaire, soumettre un forumulaire...)
     il utilise la superglobale $_GET, qui permet de récupérer des infos via l'url
@@ -69,10 +79,10 @@ __7) Dans un modèle MVC quel est le rôle du router. Quelle est la variable sup
 
 __8) Expliquez les avantages de l’utilisation d’un pattern MVC. (1.5 points)__
 
-    un patern MVC structure un projet avec des fichiers séparés, conçis et bien rangé
-    il permet une meilleure maintenance, un meilleur travail à plusieurs dev, et des modifications facilités,
-    il est un standard du web et le comprendre et le partager est donc plus simple,
+    un patern MVC structure un projet avec des fichiers séparés, conçis et bien rangés
+    il permet une meilleure maintenance, un meilleur travail entre plusieurs devs, et des modifications facilitées,
+    il est un standard du web et le comprendre et le partager est donc plus simple.
 
 __9) Détaillez les éléments qui composent un pattern MVC (1 point)__
 
-    il sépare les fichiers SQL base de données (MODEL) des front utilisateur html, css, js (VIEW) et du traitement fait en php (CONTROLLER)
+    il sépare les fichiers SQL base de données (MODEL) des fichiers front utilisateur avec du html, css, js (VIEW) et du traitement fait en php (CONTROLLER)

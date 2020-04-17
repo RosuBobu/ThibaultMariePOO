@@ -1,8 +1,4 @@
 <?php
-var_dump($_POST);
-var_dump($_GET);
-var_dump($_FILES);
-
     require 'include.php';
 
     if($_GET['controller'] === 'default' && $_GET['action'] === 'home'){
